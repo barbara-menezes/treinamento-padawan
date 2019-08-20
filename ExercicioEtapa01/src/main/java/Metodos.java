@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Metodos {
 
+    //region Exercicio1
     public static void Ex01() {
 
         Scanner scanner = new Scanner(System.in);
@@ -18,7 +19,9 @@ public class Metodos {
         Float total = (nota1 + nota2 + nota3);
         System.out.println("Total das notas: " + total);
     }
+    //endregion
 
+    //region Exercicio2
     public static void Ex02() {
 
         Scanner scanner = new Scanner(System.in);
@@ -41,4 +44,5 @@ public class Metodos {
         Float total = (nota1 + nota2 + nota3);
         System.out.println("\nNome: " + nome + "\nTurma: " + turma + "\nTotal das notas: " + total);
     }
+    //endregion
 }
