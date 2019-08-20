@@ -2,31 +2,43 @@ import java.util.Scanner;
 
 public class Metodos {
 
-    public static void SolicitarGrade() {
+    public static void Ex01() {
 
-        Scanner leitor = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Informe a nome:");
-        String nome1 = leitor.next();
-        System.out.println("Informe turma");
-        String turma1 = leitor.next();
         System.out.println("Informe a nota da prova 1:");
-        double nota1 = leitor.nextDouble();
+        Float nota1 = scanner.nextFloat();
 
-        System.out.println("Informe a nome:");
-        String nome2 = leitor.next();
-        System.out.println("Informe turma");
-        String turma2 = leitor.next();
         System.out.println("Informe a nota da prova 2");
-        double nota2 = leitor.nextDouble();
+        Float nota2 = scanner.nextFloat();
+
+        System.out.println("Informe a nota da prova 3:");
+        Float nota3 = scanner.nextFloat();
+
+        Float total = (nota1 + nota2 + nota3);
+        System.out.println("Total das notas: " + total);
+    }
+
+    public static void Ex02() {
+
+        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Informe a nome:");
-        String nome3 = leitor.next();
-        System.out.println("Informe turma");
-        String turma3 = leitor.next();
-        System.out.println("Informe a nota da prova 3:");
-        double nota3 = leitor.nextDouble();
+        String nome = scanner.nextLine();
 
-        System.out.println("O total das notas e: " + (nota1+nota2+nota3));
+        System.out.println("Informe turma");
+        String turma = scanner.nextLine();
+
+        System.out.println("Informe a nota da prova 1:");
+        Float nota1 = scanner.nextFloat();
+
+        System.out.println("Informe a nota da prova 2");
+        Float nota2 = scanner.nextFloat();
+
+        System.out.println("Informe a nota da prova 3:");
+        Float nota3 = scanner.nextFloat();
+
+        Float total = (nota1 + nota2 + nota3);
+        System.out.println("\nNome: " + nome + "\nTurma: " + turma + "\nTotal das notas: " + total);
     }
 }
