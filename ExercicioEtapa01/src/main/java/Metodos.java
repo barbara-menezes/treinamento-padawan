@@ -82,46 +82,5 @@ public class Metodos {
             System.out.print("Dados inseridos incorretamente!");
     }
 
-    public static void Ex04() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Informe nome:");
-        String nome = scanner.nextLine();
-
-        System.out.println("Informe turma");
-        String turma = scanner.nextLine();
-
-        System.out.println("Informe a nota da prova 1:");
-        Float nota1 = scanner.nextFloat();
-
-        System.out.println("Informe a nota da prova 2");
-        Float nota2 = scanner.nextFloat();
-
-        System.out.println("Informe a nota da prova 3:");
-        Float nota3 = scanner.nextFloat();
-
-        System.out.println("Informe a nota de exercício:");
-        Float notaExercicio = scanner.nextFloat();
-
-        Float total = (nota1 + nota2 + (nota3*2) + notaExercicio);
-
-        System.out.println("\nResultado final: ");
-        if (total < 40)
-            System.out.println("\nReprovado");
-        else if (total >= 40 && total <= 49)
-            System.out.println("\nRecuperação - Prova II");
-        else if (total >= 50 && total <= 59)
-            System.out.println("\nRecuperação - Prova I");
-        else if (total >= 60)
-            System.out.println("\nAprovado");
-        else if (total > 100){
-            System.out.println("\nAprovado!");
-            total = 100;
-        }
-
-        System.out.println("\nNome: " + nome + "\nTurma: " + turma + "\nTotal das notas: " + total);
-    }
-
     //endregion
 }
