@@ -13,6 +13,9 @@ public class Main
         //Metodos.Ex03();
         //Metodos.Ex04();
         //Metodos.Ex05();
-        Metodos.Ex06();
+        //Metodos.Ex06();
+        //Metodos.Ex07();
+        //Metodos.Ex08();
+        Metodos.Ex09();
     }
 }
