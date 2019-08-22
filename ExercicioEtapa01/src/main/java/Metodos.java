@@ -372,7 +372,7 @@ public class Metodos {
 
         System.out.println("\nVendedor com maior comissão: " + maiorComissaoVendedor + " - valor comissao: " + maiorcomissao);
         System.out.println("\nVendedor com menor comissão: " + menorComissaoVendedor + " - valor comissao: " + menorcomissao);
-        System.out.println("\nValor médio das comissões " + (comissaoTotal/quantVend));
+        System.out.println("\nValor médio das comissões " + (comissaoTotal / quantVend));
     }
 
     public static void Ex09() {
@@ -407,12 +407,6 @@ public class Metodos {
             default:
                 System.out.println("‘Usuário não encontrado!’");
         }
-
-        /*string opcoes = scanner.nextLine();
-        sdfasfd
-        saf
-        asdf
-        desejaContinuar = opcao.esquals('S');*/
     }
     //endregion
 }
