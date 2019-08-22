@@ -386,28 +386,30 @@ public class Metodos {
         String senha = scanner.nextLine();
 
         switch (usuario){
-            case "admin":{
-                if (senha == "admin")
-                    System.out.println("Bem vindo Administrador!");
+            case "admin":
+                if (senha.equals("admin"))
+                    System.out.println("\nBem vindo Administrador!");
                 else
-                    System.out.println("Usuário não encontrado!");
+                    System.out.println("\nUsuário não encontrado!");
                 break;
-            }
-            case "user":{
-                if (senha == "user")
-                    System.out.println("Bem Vindo Usuário!");
+            case "user":
+                if (senha.equals("user"))
+                    System.out.println("\nBem Vindo Usuário!");
                 else
-                    System.out.println("Usuário não encontrado!");
+                    System.out.println("\nUsuário não encontrado!");
                 break;
-            }
-            case "inactive":{
-                if (senha == "pass")
-                    System.out.println("Seu usuario está Inativo!");
+            case "inactive":
+                if (senha.equals("pass"))
+                    System.out.println("\nSeu usuario está Inativo!");
                 else
-                    System.out.println("Usuário não encontrado!");
+                    System.out.println("\nUsuário não encontrado!");
                 break;
-            }
+            default:
+                System.out.println("‘Usuário não encontrado!’");
         }
+
+        /*string opcoes = scanner.nextLine();
+        desejaContinuar = opcao.esquals('S');*/
     }
     //endregion
 }
