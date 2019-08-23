@@ -1,3 +1,5 @@
+import sun.invoke.util.Wrapper;
+
 import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 import java.util.List;
@@ -371,10 +373,65 @@ public class Metodos {
     }
 
     public static void Ex09() {
+       /* List<String> loginsValidos = new ArrayList<>();
+        List<String> senhaValidas = new ArrayList<>();
+
+        loginsValidos.add("admin");
+        senhaValidas.add("admin");
+
+        loginsValidos.add("user");
+        senhaValidas.add("user");
+
+        loginsValidos.add("incative");
+        senhaValidas.add("pass");
+
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Informe seu Login: ");
+        String loginDigitado = scanner.nextLine();
+
+        System.out.println("Informe seu Senha: ");
+        String senha = scanner.nextLine();
+
+        boolean logado = false;
+
+        for (int i = 0; i < loginsValidos.size(); i++) {
+            String loginValido = loginsValidos.get(i);
+            if (loginValido.equals(loginDigitado)) {
+                String senhaValida = senhaValidas.get(i);
+
+                if (senhaValida.equals(senha)) {
+
+                    if (loginValido.equals("admin")) {
+                        logado = true;
+                        System.out.println("Bem vindo Admin!");
+                        break;
+                    }
+
+                    if (loginValido.equals("user")) {
+                        logado = true;
+                        System.out.println("Bem vindo User!");
+                        break;
+                    }
+
+                    if (loginValido.equals("incative")) {
+                        logado = true;
+                        System.out.println("Seu usuario esta Inativo!");
+                        break;
+                    }
+
+                }
+            }
+        }
+        if (!logado) {
+            System.out.println("Usuario nao encontrado!");
+        }*/
+
         List<String> listaNomes = new ArrayList<>();
         List<Float> listaComissoes = new ArrayList<>();
         String nomeMaiorComissao = "";
         String nomeMenorComissao = "";
+        String UserNotFound = "\nUsuário não encontrado!";
         Float menorComissao = 0.00f;
         Float maiorCommissao = 0.00f;
         Float totalComissao = 0.00f;
@@ -391,22 +448,22 @@ public class Metodos {
                 if (senha.equals("admin"))
                     System.out.println("\nBem vindo Administrador!");
                 else
-                    System.out.println("\nUsuário não encontrado!");
+                    System.out.println(UserNotFound);
                 break;
             case "user":
                 if (senha.equals("user"))
                     System.out.println("\nBem Vindo Usuário!");
                 else
-                    System.out.println("\nUsuário não encontrado!");
+                    System.out.println(UserNotFound);
                 break;
             case "inactive":
                 if (senha.equals("pass"))
-                    System.out.println("\nSeu usuario está Inativo!");
+                    System.out.println("\nSeu usuário está Inativo!");
                 else
-                    System.out.println("\nUsuário não encontrado!");
+                    System.out.println(UserNotFound);
                 break;
             default:
-                System.out.println("‘Usuário não encontrado!’");
+                System.out.println(UserNotFound);
         }
     }
 
@@ -425,9 +482,7 @@ public class Metodos {
 
     public static void Ex11() {
         Scanner scanner = new Scanner(System.in);
-        Double imc = 0.00;
-        Double peso = 0.00;
-        Double altura = 0.00;
+        Double imc = 0.00D, peso = 0.00D, altura = 0.00D;
 
         System.out.println("Informe seu peso: ");
         peso = scanner.nextDouble();
@@ -436,25 +491,65 @@ public class Metodos {
         altura = scanner.nextDouble();
 
         imc = (peso / Math.pow(altura, 2));
-        System.out.println(imc);
+        System.out.println("\nO valor do seu IMC eh: " + imc);
 
+        System.out.println("\nStatus de acordo com a tabela IMC eh:");
         if (imc < 17)
             System.out.println("Muito abaixo do peso");
-        else if (imc >= 17 && imc <= 18.49)
+        else if (imc >= 17 && imc < 18.5)
             System.out.println("Abaixo do peso");
-        else if (imc >= 18.5 && imc <= 24.99)
+        else if (imc >= 18.5 && imc < 25)
             System.out.println("Peso normal");
-        else if (imc >= 25 && imc <= 29.99)
+        else if (imc >= 25 && imc < 30)
             System.out.println("Acima do peso");
-        else if (imc >= 30 && imc <= 34.99)
+        else if (imc >= 30 && imc < 35)
             System.out.println("Obesidade I");
-        else if (imc >= 35 && imc <= 39.99)
+        else if (imc >= 35 && imc < 40)
             System.out.println("Obesidade II");
         else if (imc >= 40)
             System.out.println("Obesidade III");
         else
             System.out.println("Dados informados estão incorretos!");
+    }
 
+    public static void Ex12() {
+
+        Scanner scanner = new Scanner(System.in);
+        List<String> listaCompras = new ArrayList<String>();
+        Integer resposta;
+
+        do {
+            System.out.println(
+                            "\n1 - Adicionar Item a Lista de Compra: \n" +
+                            "2 - Remover Item a Lista de Compra: \n" +
+                            "3 - Consultar Itens na Lista de Compra: \n" +
+                            "4- - Sair\n");
+            resposta = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (resposta) {
+                case 1: {
+                    System.out.println("Informe o nome do item: ");
+                    listaCompras.add(scanner.nextLine());
+                    break;
+                }
+                case 2: {
+                    System.out.println("Informe a posição do item que serah removido: ");
+                    Integer deletarItem = scanner.nextInt();
+                    listaCompras.remove(listaCompras.get(deletarItem));
+                    break;
+                }
+                case 3:
+                    for (String produto : listaCompras) {
+                        System.out.println(produto);
+                    }
+                    break;
+                case 4:
+                    System.out.println("Execução encerrada!");
+                    break;
+            }
+
+        } while (resposta != 0);
     }
 
     //endregion
