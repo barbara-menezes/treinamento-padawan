@@ -1,3 +1,4 @@
+import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory;
 import sun.invoke.util.Wrapper;
 
 import java.sql.ClientInfoStatus;
@@ -520,7 +521,7 @@ public class Metodos {
 
         do {
             System.out.println(
-                            "\n1 - Adicionar Item a Lista de Compra: \n" +
+                    "\n1 - Adicionar Item a Lista de Compra: \n" +
                             "2 - Remover Item a Lista de Compra: \n" +
                             "3 - Consultar Itens na Lista de Compra: \n" +
                             "4- - Sair\n");
@@ -544,9 +545,12 @@ public class Metodos {
                         System.out.println(produto);
                     }
                     break;
-                case 4:
+                case 4: {
                     System.out.println("Execução encerrada!");
                     break;
+                }
+                default:
+                    System.out.println("Execução encerrada!");
             }
 
         } while (resposta != 0);
