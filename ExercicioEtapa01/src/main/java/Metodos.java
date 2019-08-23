@@ -1,9 +1,12 @@
+import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Metodos {
 
     //region Atividades
+
     public static void Ex01() {
 
         Scanner scanner = new Scanner(System.in);
@@ -216,23 +219,19 @@ public class Metodos {
             System.out.println("\nNome: " + nome + "\nTurma: " + turma + "\nTotal das notas: " + total);
 
             System.out.println("\nResultado final: ");
-            if (total < 40){
+            if (total < 40) {
                 System.out.print("Reprovado");
                 QuantRep += 1;
-            }
-            else if (total >= 40 && total <= 49){
+            } else if (total >= 40 && total <= 49) {
                 System.out.print("Recuperação - Prova II");
                 QuantRec += 1;
-            }
-            else if (total >= 50 && total <= 59){
+            } else if (total >= 50 && total <= 59) {
                 System.out.print("Recuperação - Prova I");
                 QuantRec += 1;
-            }
-            else if (total >= 60){
+            } else if (total >= 60) {
                 System.out.print("Aprovado");
                 QuantApr += 1;
-            }
-            else
+            } else
                 System.out.print("Dados inseridos incorretamente!");
 
             System.out.print("\nDeseja adicional mais um aluno? \n(digite 1) para Sim e (digite 0) para Não\n");
@@ -261,7 +260,7 @@ public class Metodos {
         Integer repAlunos = 1;
         Integer quantApr = 0, quantRec = 0, quantRep = 0;
         Float melhorNotaAula = 0f, melhorNotaTurma = 0f;
-        String melhorAlunoAula="", melhorAlunoTurma="";
+        String melhorAlunoAula = "", melhorAlunoTurma = "";
 
         do {
             Scanner scanner = new Scanner(System.in);
@@ -298,23 +297,19 @@ public class Metodos {
             }
             System.out.println("\nNome: " + nome + "\nTurma: " + turma + "\nTotal das notas: " + total);
 
-            if (total < 40){
+            if (total < 40) {
                 System.out.print("Resultado final: Reprovado");
                 quantRep += 1;
-            }
-            else if (total >= 40 && total <= 49){
+            } else if (total >= 40 && total <= 49) {
                 System.out.print("Resultado final: Recuperação - Prova II");
                 quantRec += 1;
-            }
-            else if (total >= 50 && total <= 59){
+            } else if (total >= 50 && total <= 59) {
                 System.out.print("Resultado final: Recuperação - Prova I");
                 quantRec += 1;
-            }
-            else if (total >= 60){
+            } else if (total >= 60) {
                 System.out.print("Resultado final: Aprovado");
                 quantApr += 1;
-            }
-            else
+            } else
                 System.out.print("Dados inseridos incorretamente!");
 
             System.out.print("\n\nDeseja adicional mais um aluno? \n(digite 1) para Sim e (digite 0) para Não\n");
@@ -376,7 +371,13 @@ public class Metodos {
     }
 
     public static void Ex09() {
-
+        List<String> listaNomes = new ArrayList<>();
+        List<Float> listaComissoes = new ArrayList<>();
+        String nomeMaiorComissao = "";
+        String nomeMenorComissao = "";
+        Float menorComissao = 0.00f;
+        Float maiorCommissao = 0.00f;
+        Float totalComissao = 0.00f;
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("\nInforme seu login:");
@@ -385,7 +386,7 @@ public class Metodos {
         System.out.println("\nInforme sua senha: ");
         String senha = scanner.nextLine();
 
-        switch (usuario){
+        switch (usuario) {
             case "admin":
                 if (senha.equals("admin"))
                     System.out.println("\nBem vindo Administrador!");
@@ -408,5 +409,53 @@ public class Metodos {
                 System.out.println("‘Usuário não encontrado!’");
         }
     }
+
+    public static void Ex10() {
+        Scanner scanner = new Scanner(System.in);
+        Integer numeroInformado = 0, contador = 0, index = 0;
+
+        System.out.println("Informe um número inteiro qualquer");
+        numeroInformado = scanner.nextInt();
+
+        for (index = numeroInformado; index > 0; index--) {
+            contador = (index - 1);
+            System.out.println(contador);
+        }
+    }
+
+    public static void Ex11() {
+        Scanner scanner = new Scanner(System.in);
+        Double imc = 0.00;
+        Double peso = 0.00;
+        Double altura = 0.00;
+
+        System.out.println("Informe seu peso: ");
+        peso = scanner.nextDouble();
+
+        System.out.println("Informe sua altura: ");
+        altura = scanner.nextDouble();
+
+        imc = (peso / Math.pow(altura, 2));
+        System.out.println(imc);
+
+        if (imc < 17)
+            System.out.println("Muito abaixo do peso");
+        else if (imc >= 17 && imc <= 18.49)
+            System.out.println("Abaixo do peso");
+        else if (imc >= 18.5 && imc <= 24.99)
+            System.out.println("Peso normal");
+        else if (imc >= 25 && imc <= 29.99)
+            System.out.println("Acima do peso");
+        else if (imc >= 30 && imc <= 34.99)
+            System.out.println("Obesidade I");
+        else if (imc >= 35 && imc <= 39.99)
+            System.out.println("Obesidade II");
+        else if (imc >= 40)
+            System.out.println("Obesidade III");
+        else
+            System.out.println("Dados informados estão incorretos!");
+
+    }
+
     //endregion
 }
