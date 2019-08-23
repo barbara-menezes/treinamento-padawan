@@ -545,15 +545,11 @@ public class Metodos {
                         System.out.println(produto);
                     }
                     break;
-                case 4: {
-                    System.out.println("Execução encerrada!");
-                    break;
-                }
                 default:
                     System.out.println("Execução encerrada!");
             }
 
-        } while (resposta != 0);
+        } while (resposta != 3);
     }
 
     //endregion
